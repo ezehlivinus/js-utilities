@@ -1,1 +1,3 @@
 # js-utilities
+
+Helper functions
