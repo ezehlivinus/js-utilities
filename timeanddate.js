@@ -321,3 +321,17 @@ exports.is12HourTime = (time) => {
 
   return hour <= 12 && hasAmPm;
 };
+
+exports.timeToMillisecond = (time) => {
+  const splitTime = time.split(':');
+  const hour = Number.parseInt(splitTime[0], 10);
+  const minute = Number.parseInt(splitTime[1], 10);
+  console.log(hour, minute);
+  if (Number.isNaN(hour) || Number.isNaN(minute)) {
+    throw new Error(`Invalid time passed: ${time}`);
+  }
+
+  return ((hour * 60) + minute) * 60 * 1000;
+};
+
+console.log(this.timeToMillisecond('00:30'));
